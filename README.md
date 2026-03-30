@@ -1,16 +1,72 @@
-# React + Vite
+# 🧮 Health IMC Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida em React para cálculo de IMC (Índice de Massa Corporal), com análise de saúde, sugestão de peso ideal e histórico de resultados.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Demonstração
 
-## React Compiler
+🔗 https://health-imc-rodsilva.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Cálculo automático de IMC
+* Classificação (abaixo do peso, ideal, sobrepeso, obesidade)
+* Cálculo de peso ideal
+* Diferença de peso para atingir o ideal
+* Feedback visual com cores dinâmicas
+* Histórico de resultados salvo no navegador (localStorage)
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+* React
+* JavaScript
+* Vite
+* HTML / CSS
+* LocalStorage
+
+---
+
+## 📦 Como rodar o projeto
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 🌐 Deploy
+
+Aplicação publicada utilizando Vercel.
+
+---
+
+## 💡 Aprendizados
+
+Este projeto foi desenvolvido com foco em prática de:
+
+* Componentização em React
+* Manipulação de estado com useState e useEffect
+* Persistência de dados no navegador
+* Estruturação de aplicações front-end
+* Deploy de aplicações web
+
+---
+
+## 📌 Próximas melhorias
+
+* Gráfico de evolução do IMC
+* Layout responsivo avançado
+* Integração com API
+* Sistema de login
+
+---
+
+## 👨‍💻 Autor
+
+Rodrigo Silva
