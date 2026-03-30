@@ -1,0 +1,36 @@
+import { useState } from "react";
+
+function App() {
+  const [peso, setPeso] = useState("");
+  const [altura, setAltura] = useState("");
+  const [resultado, setResultado] = useState("");
+
+  function calcularIMC() {
+    const imc = peso / (altura * altura);
+    setResultado(imc.toFixed(2));
+  }
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>HealthIMC Pro</h1>
+
+      <input
+        placeholder="Peso (kg)"
+        onChange={(e) => setPeso(e.target.value)}
+      />
+      <br /><br />
+
+      <input
+        placeholder="Altura (m)"
+        onChange={(e) => setAltura(e.target.value)}
+      />
+      <br /><br />
+
+      <button onClick={calcularIMC}>Calcular</button>
+
+      <h2>{resultado && `IMC: ${resultado}`}</h2>
+    </div>
+  );
+}
+
+export default App;
