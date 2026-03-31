@@ -5,6 +5,7 @@ function App() {
   const [altura, setAltura] = useState("");
   const [resultado, setResultado] = useState(null);
   const [historico, setHistorico] = useState([]);
+  const [recomendacao, setRecomendacao] = useState("");
 
   // carregar histórico ao abrir
   useEffect(() => {
@@ -14,7 +15,7 @@ function App() {
     }
   }, []);
 
-  function calcularIMC() {
+  async function calcularIMC() {
     const imc = peso / (altura * altura);
 
     let classificacao = "";
@@ -52,6 +53,32 @@ function App() {
       diferenca,
       cor
     });
+
+    // 🔥 chamada para backend
+try {
+  setRecomendacao("Gerando recomendação... ⏳");
+
+  const response = await fetch("https://health-imc-backend.onrender.com/recomendacao", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      imc,
+      classificacao
+    })
+  });
+
+  const data = await response.json();
+
+  setRecomendacao(data.recomendacao);
+
+} catch (error) {
+  console.error(error);
+  setRecomendacao("Erro ao buscar recomendação 😢");
+}
+
+
   }
 
   return (
@@ -119,6 +146,7 @@ function App() {
 
             <p>🎯 Peso ideal: {resultado.pesoIdeal} kg</p>
             <p>📉 Diferença: {resultado.diferenca} kg</p>
+            <p>🤖 {recomendacao}</p>
           </div>
         )}
 
